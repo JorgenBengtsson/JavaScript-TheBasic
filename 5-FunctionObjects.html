@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>5. Function and Objects</title>
+	<script src="./js/write.js"></script>
+	<script>
+		// Normal function declaration
+		function add(value1, value2) {
+			return value1 + value2;
+		}
+		// Arrow function declaration
+		var subtract = (value1, value2) => {
+			return value1 - value2;
+		}
+		// Class declaration
+		class Person {
+			constructor(name, age, agerFunction) {
+				this.name = name;
+				this.age = age;
+				this.agerFunction = agerFunction
+			}
+			agePerson(years) {
+				return this.agerFunction(this.age, years);
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<h1>5. Function and Objects</h1>
+	<p id="output"></p>
+
+	<script>
+		var w = new Write("output");
+		var olle = new Person("Olle", 13, add);
+		w.write(olle.name);
+		w.write(olle.agePerson(4));
+
+		var lisa = new Person("Lisa", 24, subtract);
+		w.write(lisa.name);
+		w.write(lisa.agePerson(4));
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>2. Manipulate HTML</title>
+	<script>
+		// This wont work, why?
+		document.getElementById("main_content").innerHTML = "Failure!!!";
+	</script>
+</head>
+
+<body>
+	<h1>2. Manipulate HTML</h1>
+
+	<p id="main_content">This is the main content section of this page.</p>
+
+	<h2>Let's use some events to change things!</h2>
+
+	<p>
+		<button onclick="document.getElementById('main_content').style.display='none'">Hide the text above!</button>
+		<button onclick="document.getElementById('main_content').style.display='block'">Show it again!</button>
+		<button onclick="document.getElementById('main_content').style.fontSize='35px'">Make it LARGER!</button>
+		<button onclick="document.getElementById('main_content').style.fontSize='14px'">And smaller!</button>
+	</p>
+
+	<p>Javascript can be placed in Event attributes of html elements</p>
+	<pre><code>&lt;button onclick="document.getElementById('main_content').style.display='none'">Hide the text above!&lt;/button></code></pre>
+
+	<script>
+		document.getElementById("main_content").innerHTML = "This page use the getElementById method to access the DOM and change the value of the html-element with the id = main_content, to this text!";
+	</script>
+</body>
+
+</html>

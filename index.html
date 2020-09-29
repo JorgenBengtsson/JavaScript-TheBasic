@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Javascript The Basics</title>
+</head>
+<style>
+	#output {
+		margin-left: 20px;
+	}
+
+	#output a {
+		text-decoration: none;
+	}
+</style>
+
+<body>
+
+	<h1>Javascript The Basic</h1>
+
+	<p id="output"></p>
+
+	<script>
+		var result = "";
+		var pages = [{
+				name: "1. Basic Building Blocks",
+				url: "1-BasicBuildingBlocks.html"
+			}, {
+				name: "2. Manipulate HTML",
+				url: "2-ManipulateHTML.html"
+			}, {
+				name: "3. Output",
+				url: "3-Output.html"
+			}, {
+				name: "4. Variables",
+				url: "4-Variables.html"
+			}, {
+				name: "5. Function and Objects",
+				url: "5-FunctionObjects.html"
+			},
+			{
+				name: "6. AJAX",
+				url: "6-AJAX.html"
+			},
+			{
+				name: "7. AJAX and JSON",
+				url: "7-AJAXJSON.html"
+			}
+		]
+
+		pages.forEach(page => {
+			result += "<a href='" + page.url + "'>" + page.name + "</a><br/>";
+		});
+
+		document.getElementById("output").innerHTML = result;
+	</script>
+
+</body>
+
+</html>

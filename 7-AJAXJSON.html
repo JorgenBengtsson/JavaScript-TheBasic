@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>7. AJAX and JSON</title>
+	<style>
+		table {
+			text-align: left;
+		}
+
+		table td {
+			padding-right: 20px;
+		}
+	</style>
+	<script>
+		function loadOwners() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					displayOwners(this.response);
+				}
+			};
+			xhttp.open("GET", "https://localhost:44365/api/owners", true);
+			xhttp.send();
+		}
+
+		function displayOwners(data) {
+			console.log(data)
+			var table = "<tr><th>Owner</th><th>Car</th></tr>";
+			var owners = JSON.parse(data);
+			owners.forEach(owner => {
+				table += "<tr><td>" +
+					owner.name + "</td><td>" + owner.car.regnr + "</td></tr>";
+			});
+			document.getElementById("output").innerHTML = table;
+		}
+	</script>
+</head>
+
+<body>
+	<h1>7. AJAX and JSON</h1>
+
+	<button onclick="loadOwners()">Load AJAX Info</button>
+	<p>
+		<table id="output"></table>
+	</p>
+
+</body>
+
+</html>

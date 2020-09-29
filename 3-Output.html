@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>3. Output</title>
+</head>
+
+<style>
+	#output {
+		border: 1px solid blue;
+		background-color: lightblue;
+	}
+</style>
+
+<script>
+	function changeTextInElement(elementId, text) {
+		document.getElementById(elementId).innerHTML = text;
+	}
+</script>
+
+<body>
+	<h1>3. Output and Functions</h1>
+
+	<p id="output"></p>
+
+	<p>
+		<button onclick="changeTextInElement('output','We will change the text using a function and giving some attributes!')">Change the text</button>
+		<button onclick="window.alert('ALERT!!!!!')">Or open an alert-box</button>
+		<button onclick="console.log('Some text to the console of the browser')">Or write to the console</button>
+		<button onclick="document.write('Or add some text to the document itself!')">Or add a text to the document</button>
+	</p>
+
+	<script>
+		document.getElementById("output").innerHTML = "This will be the output element for this page!";
+	</script>
+</body>
+
+</html>
